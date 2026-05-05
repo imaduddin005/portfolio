@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imad Ud Din — AI Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#03060f;
+  --bg1:#070d1c;
+  --bg2:#09111f;
+  --cyan:#00e5ff;
+  --cyan2:#00b8d4;
+  --blue:#2979ff;
+  --blue2:#1565c0;
+  --teal:#1de9b6;
+  --purple:#7c4dff;
+  --white:#ffffff;
+  --w90:rgba(255,255,255,.90);
+  --w70:rgba(255,255,255,.70);
+  --w40:rgba(255,255,255,.40);
+  --w12:rgba(255,255,255,.12);
+  --w06:rgba(255,255,255,.06);
+  --text:#d4e3f7;
+  --muted:#4a6080;
+  --glass:rgba(255,255,255,.04);
+  --gb:rgba(0,229,255,0.08);
+  --h:'Syne',sans-serif;
+  --b:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Cabinet Grotesk',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+.sh{color:var(--white)!important}
+.tlco,.pjc h3,.edu-deg,.ct-h2,.skc h3{color:var(--white)!important}
+.hero-name{color:var(--white)!important}
+.ban-text strong,.ctv,.tll li strong,.pjhl li strong{color:var(--white)!important}
+.tldesc,.hero-p,.ban-text,.ct-p,.edu-txt{color:var(--w70)!important}
+.tll li,.pjhl li,.pjc p,.ss,.edu-txt{color:var(--w40)!important}
+.stat,.metric{background:var(--w06)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--blue));border-radius:3px}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 4rem;background:rgba(3,6,15,.88);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.07)}
+.logo{font-family:var(--b);font-size:.95rem;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.42);text-decoration:none;font-size:.8rem;font-weight:500;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--cyan);transition:width .3s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{width:100%}
+.hire-btn{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;border:none;padding:.4rem 1.2rem;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;animation:hireGlow 2.5s ease infinite alternate;text-decoration:none;display:inline-flex;align-items:center}
+@keyframes hireGlow{from{box-shadow:0 0 8px rgba(41,121,255,.5)}to{box-shadow:0 0 22px rgba(0,229,255,.8),0 0 45px rgba(0,229,255,.3)}}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem;position:relative;z-index:1;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);animation:orbFloat 10s ease-in-out infinite}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(41,121,255,.18),transparent 70%);top:-200px;right:-150px;animation-delay:0s}
+.orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(0,229,255,.12),transparent 70%);bottom:-100px;left:-100px;animation-delay:-4s}
+.orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(29,233,182,.1),transparent 70%);top:40%;right:20%;animation-delay:-7s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-20px,15px) scale(1.04)}66%{transform:translate(15px,-20px) scale(.97)}}
+
+.hero-wrap{position:relative;z-index:2;max-width:820px}
+.badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.18);padding:.42rem 1.1rem;border-radius:100px;font-family:var(--b);font-size:.67rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem;animation:fadeSlide .8s ease both}
+.live{width:7px;height:7px;border-radius:50%;background:#00e676;box-shadow:0 0 0 0 rgba(0,230,118,.7);animation:ping 1.8s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(0,230,118,.7)}70%{box-shadow:0 0 0 9px rgba(0,230,118,0)}100%{box-shadow:0 0 0 0 rgba(0,230,118,0)}}
+
+.hero-name{font-family:var(--h);font-weight:800;font-size:clamp(3.8rem,10vw,9rem);line-height:.9;letter-spacing:-3px;color:#fff;animation:fadeSlide .8s .1s ease both}
+.hero-name .shine{background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 40%,var(--teal) 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:300%;animation:gradMove 5s linear infinite}
+@keyframes gradMove{0%{background-position:0%}100%{background-position:300%}}
+
+.title-row{margin-top:1.2rem;display:flex;align-items:center;gap:1rem;animation:fadeSlide .8s .18s ease both;flex-wrap:wrap}
+.role-tag{background:rgba(41,121,255,.15);border:1px solid rgba(41,121,255,.3);color:var(--cyan);font-family:var(--b);font-size:.88rem;padding:.38rem 1rem;border-radius:5px;letter-spacing:.5px;min-width:140px;text-align:center}
+.role-sep{width:32px;height:1.5px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.role-sub{font-family:var(--b);font-size:.8rem;color:var(--muted)}
+
+/* IMPROVED: Shorter hero paragraph */
+.hero-p{margin-top:1.5rem;max-width:580px;color:rgba(176,196,222,.6);font-size:.97rem;line-height:1.95;animation:fadeSlide .8s .25s ease both}
+.hero-p strong{color:rgba(176,196,222,.88);font-weight:700}
+
+/* IMPROVED: Quick links row in hero */
+.hero-links{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem;animation:fadeSlide .8s .28s ease both}
+.hl{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem 1rem;border-radius:6px;font-family:var(--b);font-size:.72rem;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:all .2s;border:1.5px solid}
+.hl-gh{color:#fff;border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.05)}
+.hl-gh:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.hl-li{color:#0a66c2;border-color:rgba(10,102,194,.35);background:rgba(10,102,194,.08)}
+.hl-li:hover{border-color:#0a66c2;background:rgba(10,102,194,.18);transform:translateY(-2px)}
+.hl-cv{color:var(--teal);border-color:rgba(29,233,182,.28);background:rgba(29,233,182,.06)}
+.hl-cv:hover{border-color:var(--teal);background:rgba(29,233,182,.14);transform:translateY(-2px)}
+
+.hero-btns{margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fadeSlide .8s .32s ease both}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-family:var(--h);font-size:.85rem;font-weight:700;text-decoration:none;border-radius:7px;transition:all .25s;border:none;cursor:pointer}
+.btn-g{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;box-shadow:0 0 20px rgba(41,121,255,.35)}
+.btn-g:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(41,121,255,.55)}
+.btn-o{background:transparent;color:var(--cyan);border:1.5px solid rgba(0,229,255,.28)}
+.btn-o:hover{border-color:var(--cyan);background:rgba(0,229,255,.07);transform:translateY(-3px)}
+
+.stats{margin-top:3rem;display:flex;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;overflow:hidden;width:fit-content;backdrop-filter:blur(12px);animation:fadeSlide .8s .4s ease both}
+.stat{padding:1.25rem 2.2rem;border-right:1px solid rgba(255,255,255,.07);text-align:center}
+.stat:last-child{border-right:none}
+.sn{font-family:var(--h);font-size:2.1rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1}
+.sl{color:rgba(255,255,255,.35);font-size:.64rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:.25rem;display:block}
+
+@keyframes fadeSlide{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* DIVIDER BANNER */
+.banner{position:relative;z-index:1;background:linear-gradient(135deg,rgba(41,121,255,.14),rgba(0,229,255,.07));border-top:1px solid rgba(0,229,255,.1);border-bottom:1px solid rgba(0,229,255,.1);padding:2.2rem 4rem;display:flex;align-items:center;gap:3rem}
+.ban-icon{font-size:2rem;filter:drop-shadow(0 0 10px var(--cyan));flex-shrink:0}
+.ban-label{font-family:var(--b);font-size:.67rem;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:.3rem}
+.ban-text{color:rgba(176,196,222,.7);font-size:.9rem;line-height:1.8}
+.ban-text strong{color:#fff}
+
+/* LAYOUT */
+.wrap{max-width:1120px;margin:0 auto;padding:0 4rem}
+.sec{position:relative;z-index:1}
+.secpad{padding:7rem 0}
+.ey{font-family:var(--b);font-size:.67rem;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+.ey::before{content:'';width:28px;height:1.5px;background:var(--cyan)}
+.sh{font-family:var(--h);font-size:clamp(2rem,4vw,2.9rem);font-weight:800;letter-spacing:-1.5px;color:#fff;margin-bottom:.6rem}
+.ss{color:rgba(255,255,255,.38);font-size:.88rem;max-width:460px;margin-bottom:3.5rem;line-height:1.75}
+
+/* GLASS CARD */
+.gc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;backdrop-filter:blur(20px);transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.gc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.03),transparent 60%);pointer-events:none;border-radius:14px}
+.gc:hover{border-color:rgba(255,255,255,.22);transform:translateY(-5px);box-shadow:0 22px 55px rgba(0,0,0,.55),0 0 35px rgba(0,229,255,.07)}
+
+/* SKILLS */
+#skills{background:var(--bg1)}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+.skc{padding:1.8rem}
+.skh{display:flex;align-items:center;gap:.85rem;margin-bottom:1.3rem}
+.ski{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(41,121,255,.2),rgba(0,229,255,.1));border:1px solid rgba(0,229,255,.18);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.skc h3{font-family:var(--h);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff}
+.tgs{display:flex;flex-wrap:wrap;gap:.4rem}
+.tg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-family:var(--b);font-size:.67rem;padding:.22rem .7rem;border-radius:4px;transition:all .2s}
+.tg:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);color:#fff}
+.tg.b{background:rgba(41,121,255,.12);border-color:rgba(41,121,255,.25);color:#82b1ff}
+.tg.t{background:rgba(29,233,182,.08);border-color:rgba(29,233,182,.2);color:#64ffda}
+
+/* PROFICIENCY */
+.prow{margin-top:3.5rem}
+.pt{font-family:var(--h);font-weight:700;font-size:1rem;color:#fff;margin-bottom:1.75rem}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3.5rem}
+.ph2{display:flex;justify-content:flex-start;margin-bottom:.45rem}
+.pn{font-size:.82rem;font-weight:600;color:var(--white)}
+.pp{display:none}
+.pbar{height:4px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.pfill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;animation:grow 1.5s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+
+/* EXPERIENCE */
+#experience{background:var(--bg)}
+.tl{position:relative;padding-left:2rem}
+.tl-line{position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--blue),rgba(41,121,255,.1))}
+.tl-item{position:relative;margin-bottom:3rem}
+.tl-dot{position:absolute;left:-2.45rem;top:5px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 16px rgba(0,229,255,.65)}
+.tlc{padding:1.75rem 2rem}
+.tltop{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:.25rem}
+.tlco{font-family:var(--h);font-size:1.1rem;font-weight:800;color:#fff}
+.tlb{font-family:var(--b);font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,229,255,.09);border:1px solid rgba(0,229,255,.18);color:var(--cyan);padding:.25rem .8rem;border-radius:100px}
+.tlr{color:var(--cyan);font-weight:700;font-size:.87rem;margin-bottom:.2rem}
+.tld{font-family:var(--b);font-size:.7rem;color:var(--muted);margin-bottom:.85rem}
+.tldesc{color:rgba(176,196,222,.6);font-size:.84rem;margin-bottom:.85rem;line-height:1.8}
+.tll{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.tll li{color:rgba(176,196,222,.62);font-size:.82rem;padding-left:1.3rem;position:relative;line-height:1.75}
+.tll li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:.75rem}
+.tll li strong{color:#c8d8f0}
+.tltags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+
+/* PROJECTS */
+#projects{background:var(--bg2)}
+.pj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.5rem}
+.pjc{padding:2rem;display:flex;flex-direction:column}
+.pjtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem}
+.pjn{font-family:var(--b);font-size:.63rem;color:var(--muted)}
+.pjtype{font-family:var(--b);font-size:.59rem;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.15);color:var(--cyan);padding:.22rem .7rem;border-radius:100px}
+.pjc h3{font-family:var(--h);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:.75rem;line-height:1.3}
+.pjc p{color:rgba(176,196,222,.5);font-size:.82rem;line-height:1.85}
+.pjhl{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.04);list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.pjhl li{color:rgba(176,196,222,.5);font-size:.78rem;padding-left:1.1rem;position:relative;line-height:1.8}
+.pjhl li::before{content:'◆';position:absolute;left:0;color:var(--cyan);font-size:.4rem;top:.48rem}
+.pjhl li strong{color:rgba(176,196,222,.8)}
+.pjtools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+.dt{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.55);font-family:var(--b);font-size:.63rem;padding:.2rem .65rem;border-radius:4px}
+.dt.b{background:rgba(41,121,255,.12);border-color:rgba(41,121,255,.23);color:#82b1ff}
+
+/* IMPROVED: Project action buttons */
+.pj-actions{display:flex;gap:.55rem;margin-top:auto;padding-top:1.4rem}
+.pja{display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:5px;font-family:var(--b);font-size:.67rem;font-weight:700;letter-spacing:.4px;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.pja-code{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.14);color:rgba(255,255,255,.6)}
+.pja-code:hover{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.1)}
+.pja-demo{background:rgba(0,229,255,.08);border:1.5px solid rgba(0,229,255,.22);color:var(--cyan)}
+.pja-demo:hover{background:rgba(0,229,255,.18);border-color:var(--cyan)}
+
+/* METRIC CHIPS — new */
+.pj-metrics{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.metric-chip{display:inline-flex;align-items:center;gap:.3rem;background:rgba(29,233,182,.07);border:1px solid rgba(29,233,182,.2);color:#64ffda;font-family:var(--b);font-size:.65rem;padding:.22rem .75rem;border-radius:100px;font-weight:700}
+.metric-chip::before{content:'📊';font-size:.6rem}
+
+/* EDUCATION */
+#education{background:var(--bg1)}
+.edu-card{padding:2.5rem;display:flex;gap:2.5rem;align-items:flex-start;max-width:780px}
+.edu-ico{width:58px;height:58px;border-radius:14px;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 0 25px rgba(41,121,255,.4)}
+.edu-deg{font-family:var(--h);font-size:1.1rem;font-weight:800;color:#fff}
+.edu-sch{background:linear-gradient(90deg,var(--cyan),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:.88rem;margin-bottom:.3rem}
+.edu-meta{font-family:var(--b);font-size:.7rem;color:var(--muted)}
+.edu-txt{color:rgba(176,196,222,.6);font-size:.83rem;margin-top:.85rem;line-height:1.8}
+.edu-txt strong{color:var(--text)}
+
+/* CONTACT */
+#contact{background:var(--bg)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.ct-h2{font-family:var(--h);font-size:2.4rem;font-weight:800;letter-spacing:-1.5px;color:#fff;margin-bottom:1rem;line-height:1.1}
+.ct-h2 .g{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ct-p{color:rgba(176,196,222,.6);font-size:.9rem;line-height:1.85;margin-bottom:2rem}
+.ct-cards{display:flex;flex-direction:column;gap:.85rem}
+.ctc{display:flex;align-items:center;gap:1.1rem;padding:1rem 1.3rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;text-decoration:none;color:var(--text);transition:all .25s;backdrop-filter:blur(10px)}
+.ctc:hover{border-color:rgba(255,255,255,.25);transform:translateX(6px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.ctico{width:40px;height:40px;border-radius:9px;background:linear-gradient(135deg,rgba(41,121,255,.2),rgba(0,229,255,.1));border:1px solid rgba(0,229,255,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.ctl{font-family:var(--b);font-size:.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.ctv{font-weight:700;font-size:.85rem;color:#fff}
+
+/* CODE CARD */
+.code-card{background:rgba(3,6,15,.9);border:1px solid rgba(0,229,255,.1);border-radius:14px;overflow:hidden;backdrop-filter:blur(20px);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 40px rgba(41,121,255,.08)}
+.ccbar{background:rgba(6,12,26,.95);padding:.85rem 1.3rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(0,229,255,.07)}
+.dot{width:10px;height:10px;border-radius:50%}
+.dr{background:#ff5f57}.dy{background:#febc2e}.dg{background:#28c840}
+.cff{margin-left:auto;font-family:var(--b);font-size:.67rem;color:rgba(0,229,255,.28)}
+.ccbody{padding:1.75rem;font-family:var(--b);font-size:.77rem;line-height:2.2}
+.ck{color:#60a5fa}.cs{color:#67e8f9}.cv{color:#6ee7b7}.cb{color:rgba(255,255,255,.22)}.cn{color:#fbbf24}.cm{color:#2d4a6a}
+
+/* FOOTER */
+footer{position:relative;z-index:1;background:rgba(3,6,15,.95);border-top:1px solid rgba(255,255,255,.07);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;color:rgba(255,255,255,.3);font-size:.72rem;font-family:var(--b)}
+.flogo{background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:.9rem}
+footer a{color:var(--cyan);text-decoration:none}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:.9rem 1.5rem}
+  .nav-links,.hire-btn{display:none}
+  #hero,.wrap,.banner,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-name{letter-spacing:-2px}
+  .stats{flex-wrap:wrap;width:100%}
+  .stat{flex:1;min-width:80px;border-right:none;border-bottom:1px solid rgba(0,229,255,.07)}
+  .pgrid{grid-template-columns:1fr}
+  .ct-grid{grid-template-columns:1fr;gap:2.5rem}
+  .edu-card{flex-direction:column}
+  .banner{flex-direction:column;gap:1rem}
+}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">imad.ai</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://github.com/imaduddin005" target="_blank" class="hire-btn">● Open to Work</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="hero-wrap">
+    <div class="badge"><div class="live"></div>AI Engineer · Pakistan 🇵🇰</div>
+    <h1 class="hero-name">IMAD<br><span class="shine">UD DIN</span></h1>
+    <div class="title-row">
+      <div class="role-tag" id="rtype">AI Engineer</div>
+      <div class="role-sep"></div>
+      <div class="role-sub">Generative AI · Agentic AI · Deep Learning · ML</div>
+    </div>
+
+    <!-- Updated hero paragraph — matches resume summary, improved English -->
+    <p class="hero-p">
+      AI Engineer with hands-on experience in <strong>Machine Learning</strong>, <strong>Deep Learning</strong> (ANNs, CNNs, RNNs), and <strong>Generative AI</strong>.
+      Skilled in model optimization, feature engineering, and hyperparameter tuning.
+      Experienced in building <strong>GenAI pipelines</strong> using LangChain, LLMs, and vector databases for RAG applications,
+      and in developing <strong>AI agents</strong> with tool integration for autonomous task execution —
+      including <strong>OpenAI Agents SDK</strong>, <strong>Pydantic AI</strong>, <strong>CrewAI</strong>, <strong>AutoGen</strong>,
+      and <strong>MCP (Model Context Protocol)</strong> for production-grade agentic systems.
+    </p>
+
+    <!-- IMPROVED: GitHub / LinkedIn / Resume visible immediately -->
+    <div class="hero-links">
+      <a href="https://github.com/imaduddin005" target="_blank" class="hl hl-gh">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/imaduddin" target="_blank" class="hl hl-li">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="Imad_Resume_v2.pdf" target="_blank" class="hl hl-cv">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Resume / CV
+      </a>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-g">Explore My Work →</a>
+      <a href="#contact" class="btn btn-o">Hire Me</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="sn">3</span><span class="sl">Internships</span></div>
+      <div class="stat"><span class="sn">3+</span><span class="sl">Projects</span></div>
+      <div class="stat"><span class="sn">1+</span><span class="sl">Yrs Exp.</span></div>
+      <div class="stat"><span class="sn">12+</span><span class="sl">Tools</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="ban-icon">⚡</div>
+  <div>
+    <div class="ban-label">Who I Am</div>
+    <p class="ban-text">
+      I'm an <strong>AI Engineer</strong> from Khyber Pakhtunkhwa, Pakistan — focused on <strong>Generative AI, Agentic AI, Deep Learning, and Machine Learning</strong>.
+      Interned at a <strong>US company (remote)</strong>, a <strong>private Islamabad tech firm</strong>, and the <strong>Ministry of IT &amp; Telecom</strong>.
+      Graduating <strong>July 2026</strong> — building intelligent, autonomous AI systems at scale.
+    </p>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills" class="sec secpad">
+  <div class="wrap">
+    <div class="ey rv">Technical Expertise</div>
+    <h2 class="sh rv">Skills &amp; Stack</h2>
+    <p class="ss rv">A comprehensive AI toolkit built through internships, projects, and relentless self‑learning.</p>
+    <div class="sk-grid">
+      <div class="gc skc rv">
+        <div class="skh"><div class="ski">🐍</div><h3>Languages &amp; Libraries</h3></div>
+        <div class="tgs">
+          <span class="tg b">Python</span><span class="tg">Pandas</span><span class="tg">NumPy</span>
+          <span class="tg">Matplotlib</span><span class="tg">Scikit-learn</span><span class="tg">Flask</span><span class="tg">FastAPI</span>
+        </div>
+      </div>
+      <div class="gc skc rv">
+        <div class="skh"><div class="ski">🧠</div><h3>Deep Learning</h3></div>
+        <div class="tgs">
+          <span class="tg b">PyTorch</span><span class="tg b">TensorFlow</span><span class="tg b">Keras</span>
+          <span class="tg b">CNNs</span><span class="tg b">RNNs / LSTM</span><span class="tg b">GRU</span>
+          <span class="tg b">Transformers</span><span class="tg b">YoloV9</span>
+        </div>
+      </div>
+      <div class="gc skc rv">
+        <div class="skh"><div class="ski">🤖</div><h3>Generative AI &amp; Agents</h3></div>
+        <div class="tgs">
+          <span class="tg t">LangChain</span><span class="tg t">LangGraph</span><span class="tg t">MCP</span>
+          <span class="tg t">RAG</span><span class="tg t">LLMs</span><span class="tg t">Prompt Eng.</span>
+          <span class="tg t">Vector DBs</span><span class="tg t">Agentic AI</span>
+        </div>
+      </div>
+      <div class="gc skc rv">
+        <div class="skh"><div class="ski">⚙️</div><h3>ML Techniques</h3></div>
+        <div class="tgs">
+          <span class="tg">Supervised Learning</span><span class="tg">Unsupervised Learning</span>
+          <span class="tg">Feature Engineering</span><span class="tg">PCA</span>
+          <span class="tg">Data Augmentation</span><span class="tg">Transfer Learning</span>
+          <span class="tg">Hyperparameter Tuning</span><span class="tg">Ensembles</span>
+        </div>
+      </div>
+    </div>
+    <div class="prow rv">
+      <div class="pt">Core Proficiency</div>
+      <div class="pgrid">
+        <div><div class="ph2"><span class="pn">Python &amp; ML Libraries</span></div><div class="pbar"><div class="pfill" style="width:90%;animation-delay:.1s"></div></div></div>
+        <div><div class="ph2"><span class="pn">Deep Learning (CNNs / RNNs)</span></div><div class="pbar"><div class="pfill" style="width:85%;animation-delay:.2s"></div></div></div>
+        <div><div class="ph2"><span class="pn">LangChain &amp; RAG Pipelines</span></div><div class="pbar"><div class="pfill" style="width:80%;animation-delay:.3s"></div></div></div>
+        <div><div class="ph2"><span class="pn">Agentic AI &amp; MCP</span></div><div class="pbar"><div class="pfill" style="width:75%;animation-delay:.4s"></div></div></div>
+        <div><div class="ph2"><span class="pn">Computer Vision (YOLO / OpenCV)</span></div><div class="pbar"><div class="pfill" style="width:82%;animation-delay:.5s"></div></div></div>
+        <div><div class="ph2"><span class="pn">Data Analysis &amp; EDA</span></div><div class="pbar"><div class="pfill" style="width:88%;animation-delay:.6s"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="sec secpad">
+  <div class="wrap">
+    <div class="ey rv">Work History</div>
+    <h2 class="sh rv">Experience</h2>
+    <p class="ss rv">3 internships across government, private tech &amp; international remote — building real AI systems.</p>
+    <div class="tl">
+      <div class="tl-line"></div>
+
+      <div class="tl-item rv">
+        <div class="tl-dot"></div>
+        <div class="gc tlc">
+          <div class="tltop"><div class="tlco">ATS — United States</div><div class="tlb">Remote · 2025</div></div>
+          <div class="tlr">AI Engineering Intern</div>
+          <div class="tld">April 2025 — June 2025</div>
+          <p class="tldesc">Worked remotely for a US‑based company on advanced ML model optimization and deep learning pipelines. Focused on improving model accuracy and efficiency for regression and classification tasks.</p>
+          <ul class="tll">
+            <li>Extensive <strong>hyperparameter tuning</strong> (layers, neurons, activations, learning rates) to optimize ANN performance</li>
+            <li>Applied <strong>PCA</strong> for dimensionality reduction — improved model generalization on high‑dimensional data</li>
+            <li>Transfer learning with <strong>ResNet, DenseNet, EfficientNet, YoloV9</strong> on limited datasets</li>
+            <li>Implemented <strong>LSTM &amp; GRU</strong> variants to capture long‑term dependencies &amp; reduce vanishing gradients</li>
+            <li>Advanced <strong>data augmentation</strong> (rotation, flipping, brightness, noise injection) to prevent overfitting</li>
+            <li>Significantly reduced training time through systematic model optimization strategies</li>
+          </ul>
+          <div class="tltags">
+            <span class="tg b">PyTorch</span><span class="tg b">TensorFlow</span>
+            <span class="tg">PCA</span><span class="tg">Transfer Learning</span><span class="tg">LSTM/GRU</span><span class="tg">YoloV9</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-dot"></div>
+        <div class="gc tlc">
+          <div class="tltop"><div class="tlco">Comrex Pvt Ltd — Islamabad</div><div class="tlb">On‑site · 2024</div></div>
+          <div class="tlr">AI Engineering Intern</div>
+          <div class="tld">July 2024 — September 2024</div>
+          <p class="tldesc">Built production‑ready Generative AI &amp; Agentic AI systems. Designed scalable LLM pipelines and reusable AI components for real‑world deployment.</p>
+          <ul class="tll">
+            <li>Built <strong>RAG pipelines</strong> using LangChain + vector databases for knowledge‑augmented LLM responses</li>
+            <li>Developed <strong>multi‑step reasoning workflows</strong> with LangChain agents &amp; chains for task automation</li>
+            <li>Built <strong>Agentic AI systems</strong> enabling LLMs to autonomously use external tools &amp; APIs</li>
+            <li>Applied <strong>prompt engineering &amp; tuning</strong> to reduce hallucinations and improve output accuracy</li>
+            <li>Integrated GenAI into <strong>chatbots, Q&amp;A systems &amp; knowledge assistants</strong></li>
+            <li>Created reusable, modular AI components for scalable and maintainable architecture</li>
+          </ul>
+          <div class="tltags">
+            <span class="tg t">LangChain</span><span class="tg t">RAG</span><span class="tg t">LLMs</span>
+            <span class="tg t">Agentic AI</span><span class="tg">Prompt Eng.</span><span class="tg">Vector DBs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-dot"></div>
+        <div class="gc tlc">
+          <div class="tltop"><div class="tlco">Ministry of IT &amp; Telecom — Islamabad</div><div class="tlb">Government · 2023</div></div>
+          <div class="tlr">AI Intern</div>
+          <div class="tld">August 2023 — October 2023</div>
+          <p class="tldesc">First professional AI experience at a national government institution. Data analysis, visualization, and ML tasks within Pakistan's digital transformation initiatives.</p>
+          <ul class="tll">
+            <li><strong>Data preprocessing &amp; EDA</strong> on structured datasets to extract actionable business insights</li>
+            <li>Built <strong>data visualizations</strong> using Python (Pandas, NumPy, Matplotlib) to identify trends &amp; metrics</li>
+            <li>Applied foundational <strong>ML techniques</strong> for prediction and classification tasks</li>
+            <li>Contributed to <strong>research on AI applications</strong> in digital transformation &amp; telecom</li>
+            <li>Practical exposure to <strong>government IT infrastructure</strong> and national digital platforms</li>
+          </ul>
+          <div class="tltags">
+            <span class="tg b">Python</span><span class="tg">Pandas</span>
+            <span class="tg">NumPy</span><span class="tg">Matplotlib</span><span class="tg">EDA</span><span class="tg">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="sec secpad">
+  <div class="wrap">
+    <div class="ey rv">Selected Work</div>
+    <h2 class="sh rv">Featured Projects</h2>
+    <p class="ss rv">Real‑world AI applications in medical imaging, agriculture &amp; voice‑based agentic systems.</p>
+    <div class="pj-grid">
+
+      <!-- Project 1 — IMPROVED: Metrics + action buttons -->
+      <div class="gc pjc rv">
+        <div class="pjtop"><span class="pjn">01 / 03</span><span class="pjtype">Medical AI · Vision</span></div>
+        <h3>Spine Disease Detection via X‑Ray</h3>
+        <p>Automated spine disease classification using deep learning on X‑ray images — high‑accuracy diagnosis on limited labelled medical data.</p>
+        <!-- IMPROVED: Concrete metrics -->
+        <div class="pj-metrics">
+          <span class="metric-chip">0.90 Validation AUC</span>
+          <span class="metric-chip">4,000+ X-ray images</span>
+        </div>
+        <ul class="pjhl">
+          <li><strong>YoloV9</strong> object detection + CNN architectures for accurate disease localization</li>
+          <li><strong>Grad-CAM++</strong> for visual explainability — highlights decision regions</li>
+          <li>Transfer learning for strong performance on limited medical imaging data</li>
+          <li><strong>DICOM format</strong> medical images handled via Pydicom preprocessing</li>
+        </ul>
+        <div class="pjtools">
+          <span class="dt b">PyTorch</span><span class="dt b">YoloV9</span><span class="dt b">Grad-CAM++</span>
+          <span class="dt">OpenCV</span><span class="dt">Pydicom</span><span class="dt">CNNs</span>
+        </div>
+        <!-- IMPROVED: Action buttons -->
+        <div class="pj-actions">
+          <a href="https://github.com/imaduddin005" target="_blank" class="pja pja-code">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Code
+          </a>
+          <a href="#" class="pja pja-demo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="gc pjc rv">
+        <div class="pjtop"><span class="pjn">02 / 03</span><span class="pjtype">ML · AgriTech</span></div>
+        <h3>Vaccine Combo Prediction — Poultry</h3>
+        <p>ML system predicting optimal vaccine combos for chicks — tackling missing data, high‑cardinality features &amp; real agricultural complexity.</p>
+        <div class="pj-metrics">
+          <span class="metric-chip">Ensemble stacking + boosting</span>
+          <span class="metric-chip">Full EDA → Deploy pipeline</span>
+        </div>
+        <ul class="pjhl">
+          <li><strong>Ensemble methods</strong> (stacking &amp; boosting) for robust prediction accuracy</li>
+          <li>Model‑based <strong>imputation</strong> for missing agricultural data records</li>
+          <li><strong>Target encoding</strong> for high‑cardinality categorical variables</li>
+          <li><strong>PCA</strong> for dimensionality reduction and improved generalization</li>
+        </ul>
+        <div class="pjtools">
+          <span class="dt">Scikit-learn</span><span class="dt b">Ensembles</span>
+          <span class="dt">PCA</span><span class="dt">Target Encoding</span><span class="dt">Pandas</span>
+        </div>
+        <div class="pj-actions">
+          <a href="https://github.com/imaduddin005" target="_blank" class="pja pja-code">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Code
+          </a>
+          <a href="#" class="pja pja-demo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="gc pjc rv">
+        <div class="pjtop"><span class="pjn">03 / 03</span><span class="pjtype">Agentic AI · Voice</span></div>
+        <h3>Voice‑Based Personal Assistant</h3>
+        <p>Intelligent voice‑activated assistant powered by Agentic AI — processes speech, reasons via LLM agents &amp; executes real tasks through tools.</p>
+        <div class="pj-metrics">
+          <span class="metric-chip">Whisper STT + LangChain agents</span>
+          <span class="metric-chip">End-to-end voice pipeline</span>
+        </div>
+        <ul class="pjhl">
+          <li><strong>OpenAI Whisper</strong> for accurate real‑time speech‑to‑text transcription</li>
+          <li><strong>LangChain agent</strong> with tool‑calling for search, Q&amp;A &amp; task execution</li>
+          <li>Autonomous <strong>multi‑step reasoning</strong> for complex user queries</li>
+          <li>Extensible architecture — easily plug in new tools &amp; capabilities</li>
+        </ul>
+        <div class="pjtools">
+          <span class="dt b">LangChain</span><span class="dt b">Whisper</span>
+          <span class="dt b">LLM</span><span class="dt b">Agentic AI</span><span class="dt">Python</span>
+        </div>
+        <div class="pj-actions">
+          <a href="https://github.com/imaduddin005" target="_blank" class="pja pja-code">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View Code
+          </a>
+          <a href="#" class="pja pja-demo">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="sec secpad">
+  <div class="wrap">
+    <div class="ey rv">Academic Background</div>
+    <h2 class="sh rv">Education</h2>
+    <p class="ss rv">Formal CS education running parallel with 2+ years of real‑world AI engineering experience.</p>
+    <div class="gc edu-card rv">
+      <div class="edu-ico">🎓</div>
+      <div>
+        <div class="edu-deg">Bachelor of Science — Computer Science</div>
+        <div class="edu-sch">Pak‑Austria Institute of Applied Sciences &amp; Technology</div>
+        <div class="edu-meta">Haripur, Khyber Pakhtunkhwa, Pakistan &nbsp;·&nbsp; Expected July 2026</div>
+        <p class="edu-txt">
+          BS Computer Science with a strong focus on <strong>Generative AI, Agentic AI &amp; Deep Learning</strong>.
+          Alongside studies, completed <strong>3 internships</strong> and independent projects in
+          <strong>Generative AI</strong> (LLMs, RAG pipelines, prompt engineering),
+          <strong>Agentic AI</strong> (LangChain, OpenAI Agents SDK, Pydantic AI, tool-use, multi-step reasoning),
+          and <strong>Deep Learning</strong> (ANNs, CNNs, RNNs, model optimization).
+          Goal: full‑stack AI Engineer designing and deploying intelligent, autonomous systems at scale.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec secpad">
+  <div class="wrap">
+    <div class="ct-grid">
+      <div class="rv">
+        <div class="ey">Let's Connect</div>
+        <h2 class="ct-h2">Open to <span class="g">AI<br>Opportunities</span></h2>
+        <p class="ct-p">
+          Actively looking for <strong style="color:var(--text)">internships</strong>,
+          <strong style="color:var(--text)">freelance AI projects</strong> &amp;
+          <strong style="color:var(--text)">full‑time AI Engineering roles</strong>.
+          ML pipelines, GenAI apps, Agentic systems — ready to contribute &amp; deliver results.
+          Remote and on‑site both welcome.
+        </p>
+        <div class="ct-cards">
+          <a href="mailto:imadkhann005@gmail.com" class="ctc">
+            <div class="ctico">✉️</div>
+            <div><div class="ctl">Email</div><div class="ctv">imadkhann005@gmail.com</div></div>
+          </a>
+          <a href="https://github.com/imaduddin005" target="_blank" class="ctc">
+            <div class="ctico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div><div class="ctl">GitHub</div><div class="ctv">github.com/imaduddin005</div></div>
+          </a>
+          <a href="tel:+923409000168" class="ctc">
+            <div class="ctico">📞</div>
+            <div><div class="ctl">Phone / WhatsApp</div><div class="ctv">+92 340 9000168</div></div>
+          </a>
+          <a href="#" class="ctc">
+            <div class="ctico">📍</div>
+            <div><div class="ctl">Location</div><div class="ctv">Lower Dir, KPK, Pakistan</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="code-card rv">
+        <div class="ccbar">
+          <div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div>
+          <span class="cff">profile.json</span>
+        </div>
+        <div class="ccbody">
+          <div><span class="cm">// Imad Ud Din — AI Engineer</span></div>
+          <div><span class="cb">{</span></div>
+          <div>&nbsp; <span class="ck">"name"</span>: <span class="cs">"Imad Ud Din"</span>,</div>
+          <div>&nbsp; <span class="ck">"title"</span>: <span class="cs">"AI Engineer"</span>,</div>
+          <div>&nbsp; <span class="ck">"focus"</span>: <span class="cs">"Generative AI · Agentic AI · Deep Learning · ML"</span>,</div>
+          <div>&nbsp; <span class="ck">"github"</span>: <span class="cs">"github.com/imaduddin005"</span>,</div>
+          <div>&nbsp; <span class="ck">"education"</span>: <span class="cs">"BS CS · 2026"</span>,</div>
+          <div>&nbsp; <span class="ck">"internships"</span>: <span class="cn">3</span>,</div>
+          <div>&nbsp; <span class="ck">"specializations"</span>: <span class="cb">[</span></div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Deep Learning"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Generative AI"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Agentic AI Systems"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"OpenAI Agents SDK · Pydantic AI"</span></div>
+          <div>&nbsp; <span class="cb">]</span>,</div>
+          <div>&nbsp; <span class="ck">"status"</span>: <span class="cv">"open_to_work"</span>,</div>
+          <div>&nbsp; <span class="ck">"available_for"</span>: <span class="cb">[</span></div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Internships"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Freelance Projects"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Full-time Roles"</span></div>
+          <div>&nbsp; <span class="cb">]</span></div>
+          <div><span class="cb">}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">imad.ai</div>
+  <span>© 2025 Imad Ud Din — AI Engineer</span>
+  <span>Lower Dir, KPK · <a href="mailto:imadkhann005@gmail.com">imadkhann005@gmail.com</a></span>
+</footer>
+
+<script>
+/* ── PARTICLES ── */
+const cv=document.getElementById('bg'),cx=cv.getContext('2d');
+function resize(){cv.width=innerWidth;cv.height=innerHeight}resize();
+window.addEventListener('resize',resize);
+const pts=Array.from({length:65},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.4+.3,a:Math.random()*.35+.06}));
+function drawPts(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+    if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+    cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    cx.fillStyle=`rgba(0,229,255,${p.a})`;cx.fill();
+  });
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<130){cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.strokeStyle=`rgba(41,121,255,${.09*(1-d/130)})`;cx.lineWidth=.6;cx.stroke();}
+  }
+  requestAnimationFrame(drawPts);
+}
+drawPts();
+
+/* ── TYPED ROLE ── */
+const words=['AI Engineer','GenAI Builder','Agentic AI Dev','Deep Learning Eng.'];
+let wi=0,ci=0,del=false;
+const rt=document.getElementById('rtype');
+function type(){
+  const w=words[wi];
+  if(!del){rt.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1900);return;}}
+  else{rt.textContent=w.slice(0,--ci);if(ci===0){del=false;wi=(wi+1)%words.length;}}
+  setTimeout(type,del?55:90);
+}
+setTimeout(type,1200);
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}});},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* ── SMOOTH NAV HIGHLIGHT ── */
+const secs=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id;});
+  links.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+cur?'var(--cyan)':'';});
+});
+</script>
+</body>
+</html>
