@@ -116,6 +116,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .tg.p{background:rgba(155,114,255,.1);border-color:rgba(155,114,255,.25);color:#c4a8ff}
 .tg.o{background:rgba(255,165,0,.08);border-color:rgba(255,165,0,.2);color:#ffc966}
 .prow{margin-top:3.5rem}
+
+/* CERTIFICATES */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+.cert-card{padding:2rem;display:flex;flex-direction:column}
+.cert-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+.cert-badge{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#06281f;flex-shrink:0;box-shadow:0 0 18px rgba(29,233,182,.35)}
+.cert-org{font-family:var(--b);font-size:.66rem;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase}
+.cert-title{font-family:var(--h);font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:.75rem;line-height:1.3}
+.cert-desc{color:rgba(176,196,222,.55);font-size:.82rem;line-height:1.85;flex-grow:1}
+.cert-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.06);font-family:var(--b);font-size:.72rem;font-weight:700;letter-spacing:.4px;color:var(--teal);text-decoration:none;transition:gap .2s}
+.cert-link:hover{gap:.65rem;color:var(--cyan)}
 .pt{font-family:var(--h);font-weight:700;font-size:1rem;color:#fff;margin-bottom:1.75rem}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3.5rem}
 .ph2{display:flex;justify-content:flex-start;margin-bottom:.45rem}
@@ -266,6 +277,7 @@ footer a{color:var(--cyan);text-decoration:none}
   <div class="logo">Imad Ud Din</div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#certificates">Certificates</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
@@ -286,10 +298,12 @@ footer a{color:var(--cyan);text-decoration:none}
       <div class="role-sub">Generative AI · Agentic AI · Deep Learning · ML</div>
     </div>
     <p class="hero-p">
-      AI Engineer with hands-on experience in <strong>Machine Learning</strong>, <strong>Deep Learning</strong> (ANNs, CNNs, RNNs), and <strong>Generative AI</strong>.
-      Skilled in model optimization, feature engineering, and hyperparameter tuning.
-      Experienced building <strong>GenAI pipelines</strong> with LangChain, LLMs &amp; RAG, and developing <strong>AI agents</strong> with tool integration —
-      including <strong>OpenAI Agents SDK</strong>, <strong>Pydantic AI</strong>, <strong>CrewAI</strong>, <strong>AutoGen</strong>, and <strong>MCP</strong> for production-grade agentic systems.
+      AI Engineer specializing in <strong>Generative AI, Agentic AI, and RAG-based systems</strong>.
+      I design and build <strong>multi-agent pipelines, chatbots, and knowledge assistants</strong> using
+      <strong>LangChain</strong>, <strong>LangGraph</strong>, <strong>CrewAI</strong>, <strong>AutoGen</strong>, and <strong>MCP</strong> —
+      grounding LLM responses in real retrieved data, enabling autonomous tool use, and reducing hallucinations through careful prompt engineering.
+      Backed by a strong <strong>Deep Learning</strong> foundation — CNNs, RNNs, transfer learning, and model optimization —
+      applied to production-grade systems across NLP, computer vision, and medical imaging.
     </p>
     <div class="hero-links">
       <a href="https://github.com/imaduddin005" target="_blank" class="hl hl-gh">
@@ -311,7 +325,7 @@ footer a{color:var(--cyan);text-decoration:none}
     </div>
     <div class="stats">
       <div class="stat"><span class="sn">3</span><span class="sl">Internships</span></div>
-      <div class="stat"><span class="sn">8+</span><span class="sl">Projects</span></div>
+      <div class="stat"><span class="sn">9+</span><span class="sl">Projects</span></div>
       <div class="stat"><span class="sn">1+</span><span class="sl">Yrs Exp.</span></div>
       <div class="stat"><span class="sn">15+</span><span class="sl">Tools</span></div>
     </div>
@@ -413,6 +427,38 @@ footer a{color:var(--cyan);text-decoration:none}
   </div>
 </section>
 
+<!-- CERTIFICATES -->
+<section id="certificates" class="sec secpad" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="ey rv">Verified Credentials</div>
+    <h2 class="sh rv">Certificates</h2>
+    <p class="ss rv">Credentials earned from Anthropic, reflecting hands-on fluency with Claude and agentic AI tooling.</p>
+    <div class="cert-grid">
+
+      <div class="gc cert-card rv">
+        <div class="cert-top">
+          <div class="cert-badge">✓</div>
+          <span class="cert-org">ANTHROPIC</span>
+        </div>
+        <h3 class="cert-title">Claude Code 101</h3>
+        <p class="cert-desc">Certificate of completion covering Claude Code — Anthropic's agentic coding tool for delegating development tasks via the command line and IDE integrations.</p>
+        <a href="https://raw.githubusercontent.com/imaduddin005/portfolio/main/antropic_certificate.PNG" target="_blank" class="cert-link">View Certificate →</a>
+      </div>
+
+      <div class="gc cert-card rv">
+        <div class="cert-top">
+          <div class="cert-badge">✓</div>
+          <span class="cert-org">ANTHROPIC</span>
+        </div>
+        <h3 class="cert-title">AI Fluency: Framework &amp; Foundations</h3>
+        <p class="cert-desc">Certificate of completion on AI fluency foundations — developed in partnership with University College Cork, Ringling College of Art + Design, and the Higher Education Authority.</p>
+        <a href="https://raw.githubusercontent.com/imaduddin005/portfolio/main/certitcate.PNG" target="_blank" class="cert-link">View Certificate →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience" class="sec secpad">
   <div class="wrap">
@@ -480,12 +526,12 @@ footer a{color:var(--cyan);text-decoration:none}
   <div class="wrap">
     <div class="ey rv">Selected Work</div>
     <h2 class="sh rv">All Projects</h2>
-    <p class="ss rv">8 real‑world projects spanning medical AI, computer vision, NLP, data engineering, AgriTech &amp; full‑stack systems.</p>
+    <p class="ss rv">9 real‑world projects spanning medical AI, computer vision, NLP, agentic AI, data engineering, AgriTech &amp; full‑stack systems.</p>
     <div class="pj-grid">
 
       <!-- 01 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">01 / 08</span><span class="pjtype">Medical AI · Vision</span></div>
+        <div class="pjtop"><span class="pjn">01 / 09</span><span class="pjtype">Medical AI · Vision</span></div>
         <h3>Spine Disease Detection via X‑Ray</h3>
         <p>Automated spine disease classification using deep learning on X‑ray images — high accuracy on limited labelled DICOM medical data.</p>
         <div class="pj-metrics"><span class="metric-chip">0.90 Validation AUC</span><span class="metric-chip">4,000+ X-ray images</span></div>
@@ -503,7 +549,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 02 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">02 / 08</span><span class="pjtype">Medical AI · Vision</span></div>
+        <div class="pjtop"><span class="pjn">02 / 09</span><span class="pjtype">Medical AI · Vision</span></div>
         <h3>Brain Tumor Detection via MRI</h3>
         <p>Deep learning system for binary brain tumor classification from MRI scans using VGG19 transfer learning — tumor vs. no‑tumor with high precision.</p>
         <div class="pj-metrics"><span class="metric-chip">VGG19 + ImageNet pretrain</span><span class="metric-chip">Binary classification</span></div>
@@ -521,7 +567,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 03 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">03 / 08</span><span class="pjtype g">ML · AgriTech</span></div>
+        <div class="pjtop"><span class="pjn">03 / 09</span><span class="pjtype g">ML · AgriTech</span></div>
         <h3>Vaccine Combo Prediction — Poultry</h3>
         <p>ML system predicting optimal vaccine combos for chicks — tackling missing data, high‑cardinality features &amp; real agricultural complexity.</p>
         <div class="pj-metrics"><span class="metric-chip">Stacking + boosting ensembles</span><span class="metric-chip">Full EDA → Deploy</span></div>
@@ -539,7 +585,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 04 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">04 / 08</span><span class="pjtype">Agentic AI · Voice</span></div>
+        <div class="pjtop"><span class="pjn">04 / 09</span><span class="pjtype">Agentic AI · Voice</span></div>
         <h3>Voice‑Based Personal Assistant</h3>
         <p>Intelligent voice‑activated assistant powered by Agentic AI — processes speech, reasons via LLM agents &amp; executes real tasks through tools.</p>
         <div class="pj-metrics"><span class="metric-chip">Whisper STT + LangChain</span><span class="metric-chip">End-to-end voice pipeline</span></div>
@@ -557,7 +603,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 05 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">05 / 08</span><span class="pjtype">ML · Computer Vision</span></div>
+        <div class="pjtop"><span class="pjn">05 / 09</span><span class="pjtype">ML · Computer Vision</span></div>
         <h3>Human Activity Recognition Model</h3>
         <p>ML model that classifies human activities from sensor data — deployed as a web application for real‑time inference with video support.</p>
         <div class="pj-metrics"><span class="metric-chip">Trained .pkl model</span><span class="metric-chip">Web app deployed</span></div>
@@ -575,7 +621,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 06 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">06 / 08</span><span class="pjtype o">Data Analysis · Telecom</span></div>
+        <div class="pjtop"><span class="pjn">06 / 09</span><span class="pjtype o">Data Analysis · Telecom</span></div>
         <h3>Big Data Analysis for Telecommunications</h3>
         <p>Comprehensive big data analytics project for the telecom sector — full ETL pipeline, EDA, trend discovery &amp; predictive analytics on large‑scale telco datasets.</p>
         <div class="pj-metrics"><span class="metric-chip">Large-scale telco dataset</span><span class="metric-chip">ETL + web dashboard</span></div>
@@ -593,7 +639,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 07 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">07 / 08</span><span class="pjtype o">Data Engineering · R</span></div>
+        <div class="pjtop"><span class="pjn">07 / 09</span><span class="pjtype o">Data Engineering · R</span></div>
         <h3>Data Cleaning &amp; Preprocessing — Churn Dataset</h3>
         <p>End‑to‑end data cleaning and preprocessing pipeline using both R and Python on a real customer churn dataset — preparing raw data for ML model training.</p>
         <div class="pj-metrics"><span class="metric-chip">R + Python dual pipeline</span><span class="metric-chip">Customer churn dataset</span></div>
@@ -612,7 +658,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
       <!-- 08 -->
       <div class="gc pjc rv">
-        <div class="pjtop"><span class="pjn">08 / 08</span><span class="pjtype p">Full Stack · MySQL</span></div>
+        <div class="pjtop"><span class="pjn">08 / 09</span><span class="pjtype p">Full Stack · MySQL</span></div>
         <h3>Pharmacy Management System</h3>
         <p>Full‑featured web‑based pharmacy management system built with PHP &amp; MySQL — handles medicines, customers, suppliers, invoices, stock &amp; purchase reports.</p>
         <div class="pj-metrics"><span class="metric-chip">PHP + MySQL backend</span><span class="metric-chip">Full CRUD system</span></div>
@@ -626,6 +672,24 @@ footer a{color:var(--cyan);text-decoration:none}
         <div class="pjtools"><span class="dt p">PHP</span><span class="dt p">MySQL</span><span class="dt">HTML/CSS</span><span class="dt">SQL</span></div>
         <div class="pj-actions">
           <a href="https://github.com/imaduddin005/Pharmacy-Management" target="_blank" class="pja pja-code"><svg class="gh-svg" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> View Code</a>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="gc pjc rv">
+        <div class="pjtop"><span class="pjn">09 / 09</span><span class="pjtype t">Agentic AI · RAG</span></div>
+        <h3>Multi-Agent Research System</h3>
+        <p>A fully agentic research pipeline: search, retrieve, write, and self-critique — built from scratch with LangChain, LangGraph &amp; LCEL, with every tool call logged and verified.</p>
+        <div class="pj-metrics"><span class="metric-chip">4-agent pipeline</span><span class="metric-chip">Tool-call verified</span></div>
+        <ul class="pjhl">
+          <li><strong>Search Agent</strong> retrieves live information via the Tavily API</li>
+          <li><strong>Reader Agent</strong> autonomously scrapes sources — PDF-aware, auto-follows arXiv papers to full text, with fallback URLs on scrape failure</li>
+          <li><strong>Writer &amp; Critic chains</strong> built with LCEL synthesize a grounded report and self-score it</li>
+          <li>Full tool-call tracing verifies agents ground answers in retrieved data, not memory</li>
+        </ul>
+        <div class="pjtools"><span class="dt t">LangChain</span><span class="dt t">LangGraph</span><span class="dt t">RAG</span><span class="dt t">Agentic AI</span><span class="dt">Gemini</span><span class="dt">Streamlit</span></div>
+        <div class="pj-actions">
+          <a href="https://github.com/imaduddin005/multi-agent-research-system" target="_blank" class="pja pja-code"><svg class="gh-svg" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> View Code</a>
         </div>
       </div>
 
@@ -647,7 +711,7 @@ footer a{color:var(--cyan);text-decoration:none}
         <div class="edu-meta">Haripur, Khyber Pakhtunkhwa, Pakistan &nbsp;·&nbsp; Expected July 2026</div>
         <p class="edu-txt">
           BS Computer Science with a strong focus on <strong>Generative AI, Agentic AI, Deep Learning &amp; Data Engineering</strong>.
-          Alongside studies, completed <strong>3 internships</strong> and <strong>8+ independent projects</strong> spanning
+          Alongside studies, completed <strong>3 internships</strong> and <strong>9+ independent projects</strong> spanning
           <strong>Generative AI</strong> (LLMs, RAG pipelines, prompt engineering),
           <strong>Agentic AI</strong> (LangChain, OpenAI Agents SDK, Pydantic AI),
           <strong>Deep Learning</strong> (ANNs, CNNs, RNNs),
@@ -710,7 +774,7 @@ footer a{color:var(--cyan);text-decoration:none}
           <div>&nbsp; <span class="ck">"github"</span>: <span class="cs">"github.com/imaduddin005"</span>,</div>
           <div>&nbsp; <span class="ck">"education"</span>: <span class="cs">"BS CS · 2026"</span>,</div>
           <div>&nbsp; <span class="ck">"internships"</span>: <span class="cn">3</span>,</div>
-          <div>&nbsp; <span class="ck">"projects"</span>: <span class="cn">8</span>,</div>
+          <div>&nbsp; <span class="ck">"projects"</span>: <span class="cn">9</span>,</div>
           <div>&nbsp; <span class="ck">"databases"</span>: <span class="cb">[</span><span class="cs">"MySQL"</span>, <span class="cs">"PostgreSQL"</span><span class="cb">]</span>,</div>
           <div>&nbsp; <span class="ck">"specializations"</span>: <span class="cb">[</span></div>
           <div>&nbsp;&nbsp;&nbsp; <span class="cs">"Deep Learning"</span>,</div>
